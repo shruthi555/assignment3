@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Question 7 Result</title>
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+            th, td {
+            padding: 5px;
+            text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <header style="text-align: center;">
+            <h1>
+            SRUTHI : 1001771780
+            </h1>
+            <h3>
+            	<a href="/">Click to go to Home</a>
+            </h3>
+        </header>
+	    <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Picture</th>
+                <th>Caption</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result['Name'] }}</td>
+                    <td><img src="{{image_folder}}/{{ result['Picture'] }}" width="100px" alt="No Image"></td>
+                    <td>{{ result['Caption'] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

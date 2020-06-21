@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+            th, td {
+            padding: 5px;
+            text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <header style="text-align: center;">
+            <h1>
+                SRUTHI CHANDUPATLA
+            </h1>
+            <img src="{{ image_folder }}/b.jpg" width="200px" alt="No image is present for b.jpg">
+            <h1>1001771780</h1>
+        </header>
+        <h3> Question 6</h3>
+        <form action="/addnums" method="post">
+            Enter First Number: <input type="number" name="first" width="60">
+            Enter Second Number: <input type="number" name="second" width="60">
+            <input type="submit" value="Click to Add">
+        </form>
+        <h3> Question 7</h3>
+        <form action="/stateall" method="post">
+            Enter State: <input type="text" name="state" maxlength="200" width="60">
+            <input type="submit" value="Search">
+        </form>
+        <h3> Question 8</h3>
+        <form action="/updatedata" method="post">
+            Enter Name: <input type="text" name="name" maxlength="200" width="60">
+            Enter Updated value of State: <input type="text" name="state" maxlength="200" width="60">
+            Enter Updated value of Caption: <input type="text" name="caption" maxlength="200" width="60">
+            <input type="submit" value="Update">
+        </form>
+        <h3> Data:</h3>
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Room</th>
+                <th>State</th>
+                <th>Picture</th>
+                <th>Caption</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result['Name'] }}</td>
+                    <td>{{ result['ID'] }}</td>
+                    <td>{{ result['Room'] }}</td>
+                    <td>{{ result['State'] }}</td>
+                    <td><img src="{{image_folder}}/{{ result['Picture'] }}" width="100px" alt="No Image"></td>
+                    <td>{{ result['Caption'] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

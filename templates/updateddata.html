@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Question 8 Result</title>
+    </head>
+    <body>
+        <header style="text-align: center;">
+            <h1>
+            SRUTHI : 1001771780
+            </h1>
+            <h3>
+            	<a href="/">Click to go to Home</a>
+            </h3>
+        </header>
+        {% if outputsize > 0 %}
+        <h2>{{message}}</h2>
+        <h3 style="color: red"> Previous values for {{results1[0]["Name"]}}:</h3>
+        <h4> State : {{results1[0]["State"]}}</h4>
+        <h4> Caption : {{results1[0]["Caption"]}}</h4>
+        <h3 style="color: red"> Updates values for {{results2[0]["Name"]}}:</h3>
+        <h4> State : {{results2[0]["State"]}}</h4>
+        <h4> Caption : {{results2[0]["Caption"]}}</h4>
+        {% else %}
+        <h2>Name is not present in the database</h2>
+        {% endif %}
+    </body>
+</html>
